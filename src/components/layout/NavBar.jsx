@@ -5,6 +5,7 @@ const navItems = [
   { href: '#inicio', label: 'Inicio' },
   { href: '#historia', label: 'Historia' },
   { href: '#oferta-academica', label: 'Oferta académica' },
+  { href: '#vida-escolar', label: 'Vida escolar' },
   { href: '#admision', label: 'Admisión' },
   { href: '#contacto', label: 'Contacto' },
 ]

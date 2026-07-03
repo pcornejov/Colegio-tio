@@ -3,6 +3,7 @@ import Footer from './components/layout/Footer'
 import Hero from './components/sections/Hero'
 import Historia from './components/sections/Historia'
 import OfertaAcademica from './components/sections/OfertaAcademica'
+import VidaEscolar from './components/sections/VidaEscolar'
 import Admision from './components/sections/Admision'
 import Contacto from './components/sections/Contacto'
 
@@ -20,6 +21,7 @@ function App() {
         <Hero />
         <Historia />
         <OfertaAcademica />
+        <VidaEscolar />
         <Admision />
         <Contacto />
       </main>
