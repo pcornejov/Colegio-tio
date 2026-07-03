@@ -40,14 +40,23 @@ export const school = {
     // Fuente: listado de establecimientos de sleppunillacordillera.gob.cl.
     // TODO(confirm): confirmar formato/vigencia directamente con la dirección del establecimiento.
     telefono: '+56 44 335 1923',
+    // Teléfono móvil adicional de la dirección del establecimiento,
+    // confirmado directamente por el dueño del proyecto. Ya no requiere
+    // confirmación adicional.
+    telefonoMovil: '+56 9 3703 7447',
     // Fuente: listado de establecimientos de sleppunillacordillera.gob.cl.
     email: 'escuelajosemiguelcarrera@sleppunillacordillera.cl',
     sitioReferencia: 'https://sleppunillacordillera.gob.cl/establecimientos-educacionales-2/',
   },
 
-  // TODO(confirm): nombre de la dirección vigente al momento de esta consulta
-  // (fuente: sleppunillacordillera.gob.cl). Puede cambiar; confirmar con el SLEP.
-  direccionEscolar: 'Matilde Jofré Martínez',
+  // Nombre de la directora vigente (fuente: sleppunillacordillera.gob.cl) y
+  // horario de atención del establecimiento. El horario fue confirmado
+  // directamente por el dueño del proyecto, por lo que ya no es un
+  // TODO(confirm) pendiente de validar con el SLEP.
+  direccionEscolar: {
+    nombre: 'Matilde Jofré Martínez',
+    horarioAtencion: 'Lunes a Jueves 8:15 a 18:00, Viernes 8:15 a 13:00',
+  },
 
   historia: {
     resumen:
@@ -291,6 +300,43 @@ export const school = {
       'Las fechas exactas del proceso SAE se publican cada año en sae.mineduc.cl. Confirmar calendario vigente antes de publicar plazos definitivos.',
     sitioSae: 'https://www.sistemadeadmisionescolar.cl/',
   },
+
+  // Documentos institucionales confirmados en la página "Documentos" del
+  // sitio oficial escuelajosemcarrera.cl (HTML descargado localmente para
+  // esta investigación).
+  //
+  // PARTICULARIDAD DETECTADA (declarada con transparencia, no oculta): el
+  // sitio oficial etiqueta el primer documento como "PEI - 2025" y el
+  // segundo como "Reglamento Interno y Convivencia - 2024-2025", pero ambos
+  // enlaces (href) apuntan a archivos PDF cuyo nombre de archivo indica años
+  // anteriores (2021 y 2019 respectivamente). Es decir, es posible que el
+  // sitio oficial no haya actualizado el archivo físico al renombrar la
+  // etiqueta visible, o que el contenido sí esté vigente y solo haya
+  // cambiado el nombre del archivo históricamente. No se puede verificar
+  // cuál es el caso sin abrir el PDF; se enlaza tal como lo presenta el
+  // sitio oficial, sin alterar las URLs.
+  documentos: [
+    {
+      nombre: 'Proyecto Educativo Institucional (PEI) 2025',
+      url: 'http://escuelajosemcarrera.cl/wp-content/uploads/2021/12/PEI-2021.pdf',
+      descripcion: 'Documento vigente publicado como "PEI - 2025" por el sitio oficial del establecimiento.',
+    },
+    {
+      nombre: 'Reglamento Interno y de Convivencia Escolar 2024-2025',
+      url: 'http://escuelajosemcarrera.cl/wp-content/uploads/2019/04/Reglamento-de-de-Convivencia-Escolar-Esc.-Gral.-JMCV-1.pdf',
+      descripcion: 'Documento vigente publicado como "Reglamento Interno y Convivencia - 2024-2025" por el sitio oficial.',
+    },
+    {
+      nombre: 'Reglamento de Evaluación y Promoción 2024-2025',
+      url: 'http://escuelajosemcarrera.cl/wp-content/uploads/2025/06/REGLAMENTO-DE-EVALUACION-2024-2025.pdf',
+      descripcion: '',
+    },
+    {
+      nombre: 'Plan de Formación Ciudadana 2024-2025',
+      url: 'http://escuelajosemcarrera.cl/wp-content/uploads/2025/06/PLAN-DE-FORMACION-CIUDADANA-ESCUELA-JMC-2024-2025.pdf',
+      descripcion: '',
+    },
+  ],
 }
 
 export default school
