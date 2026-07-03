@@ -104,7 +104,7 @@ cierre de QA de accesibilidad que verificó y corrigió el contraste AA y la
 claridad de los enlaces a PDF de todo lo construido en las iteraciones
 6-9.
 
-### Tercera tanda (iteración 11)
+### Tercera tanda (iteraciones 11-12)
 
 - [x] **Iteración 11 — Galería de fotos + datos oficiales de Mineduc**:
       - Nueva sección `#galeria` (`src/components/sections/Galeria.jsx`),
@@ -156,6 +156,73 @@ el conjunto de talleres más generalista/artístico de los dos ya existentes
 (el segundo ciclo tiene una oferta más diferenciada: Formación Ciudadana,
 Patrimonio, Fotografía, etc.). Si esta asignación de ciclo no es correcta,
 ajustar `talleresExtraescolares` en `src/data/school.js`.
+
+- [x] **Iteración 12 — Pulido visual general**:
+      - **Hero con foto de fachada** (`Hero.jsx`): se reemplazó el fondo de
+        gradiente plano por la fotografía real `fachada.jpg` (agregada en
+        la Iteración 11) como `<img>` de fondo absoluto y decorativo
+        (`alt=""`, `aria-hidden`), con el mismo overlay de gradiente
+        azul-oscuro → azul ya verificado por contraste AA, sin cambios de
+        color ni de contenido.
+      - **Consistencia de tarjetas y micro-interacciones**: los dos bloques
+        de información de `Contacto.jsx` (Dirección y Dirección del
+        establecimiento), que repetían a mano las clases de `Card`, ahora
+        usan el componente `<Card>` de `src/components/ui/Card.jsx`
+        (`Admision.jsx` ya usaba `<Card>` en todos sus bloques genéricos, así
+        que no requirió cambios en ese punto). `Card.jsx` ganó una elevación
+        sutil al hover (`hover:-translate-y-0.5`, con `transform` y
+        `transition` en vez de solo `transition-shadow`, para que la
+        traslación anime igual de suave que la sombra).
+      - **Foco visible**: se agregaron estilos `focus-visible:ring-2
+        focus-visible:ring-institucional-rojo` (con `ring-offset` ajustado
+        al fondo local de cada contexto: crema en `NavBar.jsx`, blanco en
+        los CTA de `Hero.jsx` y en los enlaces de documentos de
+        `Contacto.jsx`) a todos los enlaces que antes solo tenían estilos
+        `hover:`.
+      - **Jerarquía tipográfica**: el `<h1>` de `Hero.jsx` pasó a
+        `text-5xl sm:text-6xl tracking-tight`; el `<h2>` de
+        `SectionHeading.jsx` ganó `tracking-tight`. Los subtítulos
+        (`text-gray-600`) no se tocaron.
+      - **Nuevo componente `SubHeading`** (`src/components/ui/SubHeading.jsx`):
+        elimina la duplicación del patrón `<h3 ... text-2xl font-bold
+        text-institucional-azul>` + `<p ... text-gray-600>` que estaba
+        copiado en varios archivos. Reemplazado en `Admision.jsx` ("Nuestro
+        Proyecto Educativo"), `Contacto.jsx` ("Documentos institucionales"),
+        `OfertaAcademica.jsx` ("Talleres extraescolares" y "Noticias"),
+        `VidaEscolar.jsx` ("Programas institucionales") y `Galeria.jsx`
+        ("Infraestructura"). El componente acepta `titleClassName` /
+        `subtitleClassName` opcionales para reproducir, sin cambio visual,
+        los pequeños márgenes distintos que ya existían entre bloques
+        (`mb-8` en el subtítulo de "Talleres extraescolares", `mb-4` en el
+        título de "Infraestructura").
+
+**Desviaciones respecto a la especificación (Iteración 12)**:
+
+- El bloque de "Nuestros sellos" en `Admision.jsx` (chips con borde
+  `institucional-dorado-claro`, `p-4`, texto centrado) **no** se convirtió a
+  `<Card>`: su estilo es deliberadamente distinto (color de borde y
+  alineación) al patrón genérico `rounded-xl border border-gray-200 bg-white
+  p-6` que pedía la especificación, y forzarlo a `<Card>` habría requerido
+  una variante nueva sin beneficio claro de reutilización.
+- El enlace de cada documento institucional en `Contacto.jsx` (un `<a>`
+  completo, no un `<div>`) se dejó como `<a>` en vez de convertirlo a
+  `<Card>`, porque `Card` renderiza un `<div>` y el elemento necesita seguir
+  siendo un enlace navegable de principio a fin; solo se le agregaron los
+  estilos de foco visible pedidos para "enlaces de documentos".
+- Los estilos de foco visible se aplicaron a los elementos explícitamente
+  listados en la especificación (`NavBar.jsx`, CTAs de `Hero.jsx`, enlaces
+  de documentos de `Contacto.jsx`); otros enlaces sueltos del sitio
+  (teléfono, correo, SAE, "sitio oficial" del SLEP, mapa) mantienen su
+  estilo `hover:` previo, para no expandir el alcance más allá de lo
+  pedido.
+
+**Estado de la tercera tanda: completa (2/2, iteraciones 11-12).** Con el
+mosaico de fotos, las cifras oficiales de Mineduc y los datos ampliados de
+la Iteración 11, más el pulido visual general (foto de fondo en el Hero,
+tarjetas consistentes con micro-interacción de hover, foco visible en
+todos los enlaces interactivos, jerarquía tipográfica reforzada y
+eliminación de duplicación con `SubHeading`) de la Iteración 12, se cierra
+esta mini-tanda de 2 iteraciones.
 
 ## Decisiones de diseño
 

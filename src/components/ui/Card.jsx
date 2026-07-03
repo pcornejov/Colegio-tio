@@ -1,7 +1,7 @@
 export default function Card({ title, children, className = '' }) {
   return (
     <div
-      className={`rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md ${className}`}
+      className={`transform rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition hover:-translate-y-0.5 hover:shadow-md ${className}`}
     >
       {title && (
         <h3 className="mb-2 text-lg font-semibold text-institucional-azul">

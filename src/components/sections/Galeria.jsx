@@ -1,4 +1,5 @@
 import SectionHeading from '../ui/SectionHeading'
+import SubHeading from '../ui/SubHeading'
 import { school } from '../../data/school'
 
 // Fotografías reales del establecimiento: biblioteca (CRA) y fachada.
@@ -67,9 +68,7 @@ export default function Galeria() {
 
         {school.infraestructura?.espacios?.length > 0 && (
           <div className="mt-12">
-            <h3 className="mb-4 text-center text-2xl font-bold text-institucional-azul">
-              Infraestructura
-            </h3>
+            <SubHeading title="Infraestructura" titleClassName="mb-4" />
             <ul className="flex flex-wrap justify-center gap-2">
               {school.infraestructura.espacios.map((espacio) => (
                 <li

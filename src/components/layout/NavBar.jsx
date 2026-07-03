@@ -22,7 +22,7 @@ export default function NavBar() {
       >
         <a
           href="#inicio"
-          className="text-lg font-bold text-institucional-azul"
+          className="rounded-md text-lg font-bold text-institucional-azul focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-institucional-rojo focus-visible:ring-offset-2 focus-visible:ring-offset-institucional-crema"
         >
           {school.nombreOficial}
         </a>
@@ -57,7 +57,7 @@ export default function NavBar() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="font-medium text-institucional-azul hover:text-institucional-rojo"
+                className="rounded-md font-medium text-institucional-azul hover:text-institucional-rojo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-institucional-rojo focus-visible:ring-offset-2 focus-visible:ring-offset-institucional-crema"
               >
                 {item.label}
               </a>
@@ -75,7 +75,7 @@ export default function NavBar() {
             <li key={item.href}>
               <a
                 href={item.href}
-                className="block font-medium text-institucional-azul hover:text-institucional-rojo"
+                className="block rounded-md font-medium text-institucional-azul hover:text-institucional-rojo focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-institucional-rojo focus-visible:ring-offset-2 focus-visible:ring-offset-institucional-crema"
                 onClick={() => setOpen(false)}
               >
                 {item.label}
