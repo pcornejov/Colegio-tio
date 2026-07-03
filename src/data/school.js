@@ -135,28 +135,65 @@ export const school = {
       descripcion:
         'Programa de Integración Escolar (PIE) orientado a estudiantes con necesidades educativas especiales. Confirmar cobertura y cupos vigentes con la dirección del establecimiento.',
     },
-    // Talleres extraescolares confirmados en el sitio oficial
-    // escuelajosemcarrera.cl y coincidentes con publicaciones reales del
-    // Facebook oficial del colegio.
-    talleres: [
-      'Ajedrez',
-      'Danza / baile',
-      'Fútbol (damas)',
-      'Fútbol (hombres)',
-      'Guitarra',
-      'Computación',
-      'Formación ciudadana',
-      'Fotografía',
-      'Hilorama',
-      'Patrimonio',
-      'Pintura',
-      'Básquetbol',
-      'Tenis de mesa',
-      'Polideportivo',
-      'Yoga',
-      'Inglés (niveles parvularios)',
-      'Arte y manualidades',
-      'Huerto',
+    // Talleres extraescolares agrupados por ciclo, confirmados en la página
+    // "Cursos" del sitio oficial escuelajosemcarrera.cl (HTML descargado
+    // localmente para esta investigación). El horario del Taller de Ajedrez
+    // (jueves, en la biblioteca) ya estaba confirmado en la noticia real del
+    // "Torneo Interno de Ajedrez" (ver vidaEscolar.actividades más abajo).
+    talleresExtraescolares: [
+      {
+        id: 'parvularia',
+        ciclo: 'NT1 y NT2',
+        cicloDescripcion: 'Pre-Kínder y Kínder',
+        talleres: [
+          { nombre: 'Huerto', nota: 'Pre-Kínder' },
+          { nombre: 'Inglés', nota: 'Pre-Kínder y Kínder' },
+          { nombre: 'Yoga', nota: 'Pre-Kínder y Kínder' },
+        ],
+      },
+      {
+        id: 'primer-ciclo',
+        ciclo: 'Primer ciclo',
+        cicloDescripcion: '1° a 4° básico',
+        talleres: [
+          { nombre: 'Arte y Recreación' },
+          { nombre: 'Baile / Danza' },
+          { nombre: 'Guitarra' },
+          { nombre: 'Huerto' },
+          { nombre: 'Manualidades' },
+          { nombre: 'Origami' },
+          { nombre: 'Pintura' },
+          { nombre: 'Polideportivo 1° y 2° básico', horario: 'Lunes' },
+          { nombre: 'Polideportivo 3° y 4° básico', horario: 'Martes' },
+          { nombre: 'Psicomotricidad' },
+          { nombre: 'Técnicas de Artes' },
+        ],
+      },
+      {
+        id: 'segundo-ciclo',
+        ciclo: 'Segundo ciclo',
+        cicloDescripcion: '5° a 8° básico',
+        talleres: [
+          {
+            nombre: 'Ajedrez',
+            horario: 'Jueves',
+            nota: '5°, 7° y 8° básico, en la biblioteca',
+          },
+          { nombre: 'Baile' },
+          { nombre: 'Computación' },
+          { nombre: 'Formación Ciudadana' },
+          { nombre: 'Fotografía' },
+          { nombre: 'Fútbol Damas' },
+          { nombre: 'Fútbol Hombres' },
+          { nombre: 'Guitarra' },
+          { nombre: 'Hilorama' },
+          { nombre: 'Patrimonio' },
+          { nombre: 'Pintura' },
+          { nombre: 'Selección de Básquetbol' },
+          { nombre: 'Taller de Arte y Manualidades' },
+          { nombre: 'Tenis de Mesa' },
+        ],
+      },
     ],
   },
 
