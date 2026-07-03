@@ -28,10 +28,15 @@ URL en vivo: https://pcornejov.github.io/Colegio-tio/
 - [x] **Iteración 3 — Oferta académica**: sección `#oferta-academica`
       (niveles, JEC, PIE), bloque estático de noticias, NavBar actualizado
       con el anchor `#oferta-academica`.
-- [ ] **Iteración 4 — Admisión + Contacto**: sección `#admision` (proceso
-      SAE genérico), sección `#contacto` (dirección, mapa embebido
-      OpenStreetMap, referencia a sleppunillacordillera.gob.cl), Footer
-      final, NavBar completo con los 5 anchors.
+- [x] **Iteración 4 — Admisión + Contacto**: sección `#admision` (proceso
+      SAE genérico, con nota clara de que las fechas exactas se publican
+      cada año en sae.mineduc.cl y enlace al sitio oficial del SAE),
+      sección `#contacto` (dirección, teléfono, correo, mapa embebido
+      OpenStreetMap con coordenadas aproximadas del centro de San Carlos,
+      referencia a sleppunillacordillera.gob.cl), Footer final con los
+      tres bloques (identidad, contacto, SLEP), NavBar completo con los 5
+      anchors (`#inicio`, `#historia`, `#oferta-academica`, `#admision`,
+      `#contacto`).
 - [ ] **Iteración 5 — Pulido / SEO / accesibilidad**: meta tags + Open
       Graph + favicon, landmarks semánticos, skip-to-content, alt text,
       contraste, `robots.txt` + `sitemap.xml`, cierre de este roadmap.
