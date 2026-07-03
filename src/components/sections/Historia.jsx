@@ -15,7 +15,7 @@ export default function Historia() {
         <div className="grid gap-10 md:grid-cols-[auto_1fr] md:items-start">
           <img
             src={`${import.meta.env.BASE_URL}images/escudo-placeholder.svg`}
-            alt="Escudo institucional provisional de la Escuela José Miguel Carrera Verdugo"
+            alt="Escudo institucional (interpretación gráfica propia, no oficial) de la Escuela José Miguel Carrera Verdugo: blasón azul y dorado con silueta de montañas y una antorcha central"
             width={140}
             height={168}
             className="mx-auto md:mx-0"
