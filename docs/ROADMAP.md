@@ -25,9 +25,9 @@ URL en vivo: https://pcornejov.github.io/Colegio-tio/
       errónea al dominio `jmcarrera.slepcol.cl` (ver nota abajo) y se
       incorporaron datos de contacto reales encontrados en el sitio oficial
       del SLEP Punilla Cordillera.
-- [ ] **Iteración 3 — Oferta académica**: sección `#oferta-academica`
-      (niveles, JEC, PIE), posible bloque estático de noticias, NavBar
-      actualizado.
+- [x] **Iteración 3 — Oferta académica**: sección `#oferta-academica`
+      (niveles, JEC, PIE), bloque estático de noticias, NavBar actualizado
+      con el anchor `#oferta-academica`.
 - [ ] **Iteración 4 — Admisión + Contacto**: sección `#admision` (proceso
       SAE genérico), sección `#contacto` (dirección, mapa embebido
       OpenStreetMap, referencia a sleppunillacordillera.gob.cl), Footer

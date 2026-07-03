@@ -4,6 +4,7 @@ import { school } from '../../data/school'
 const navItems = [
   { href: '#inicio', label: 'Inicio' },
   { href: '#historia', label: 'Historia' },
+  { href: '#oferta-academica', label: 'Oferta académica' },
 ]
 
 export default function NavBar() {
