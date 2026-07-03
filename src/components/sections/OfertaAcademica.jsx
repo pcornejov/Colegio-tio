@@ -23,12 +23,25 @@ const noticias = [
 ]
 
 // Colores decorativos (fondos claros + texto oscuro, ambos con contraste
-// AA verificado) para las tarjetas/chips de talleres extraescolares.
-const chipStyles = [
-  'border border-institucional-azul-claro/40 bg-institucional-azul-claro/10 text-institucional-azul-oscuro',
-  'border border-institucional-mostaza-claro/60 bg-institucional-mostaza-claro/20 text-institucional-mostaza',
-  'border border-institucional-dorado-claro/60 bg-institucional-dorado-claro/20 text-institucional-dorado',
-]
+// AA verificado) para las tarjetas/chips de talleres extraescolares, por
+// ciclo.
+const cicloStyles = {
+  parvularia: {
+    card: 'border-institucional-azul-claro/30 bg-institucional-azul-claro/5',
+    heading: 'text-institucional-azul-oscuro',
+    chip: 'border border-institucional-azul-claro/40 bg-institucional-azul-claro/10 text-institucional-azul-oscuro',
+  },
+  'primer-ciclo': {
+    card: 'border-institucional-mostaza-claro/40 bg-institucional-mostaza-claro/5',
+    heading: 'text-institucional-mostaza',
+    chip: 'border border-institucional-mostaza-claro/60 bg-institucional-mostaza-claro/20 text-institucional-mostaza',
+  },
+  'segundo-ciclo': {
+    card: 'border-institucional-dorado-claro/40 bg-institucional-dorado-claro/5',
+    heading: 'text-institucional-dorado',
+    chip: 'border border-institucional-dorado-claro/60 bg-institucional-dorado-claro/20 text-institucional-dorado',
+  },
+}
 
 export default function OfertaAcademica() {
   return (
@@ -70,25 +83,55 @@ export default function OfertaAcademica() {
           )}
         </div>
 
-        {school.ofertaAcademica.talleres?.length > 0 && (
+        {school.ofertaAcademica.talleresExtraescolares?.length > 0 && (
           <div className="mt-16">
             <h3 className="mb-2 text-center text-2xl font-bold text-institucional-azul">
               Talleres extraescolares
             </h3>
-            <p className="mx-auto mb-6 max-w-2xl text-center text-gray-600">
+            <p className="mx-auto mb-8 max-w-2xl text-center text-gray-600">
               Además de las asignaturas regulares, los estudiantes pueden participar
-              en estos talleres y actividades extraprogramáticas.
+              en estos talleres y actividades extraprogramáticas, organizados por
+              ciclo.
             </p>
-            <ul className="flex flex-wrap justify-center gap-3">
-              {school.ofertaAcademica.talleres.map((taller, index) => (
-                <li
-                  key={taller}
-                  className={`rounded-full px-4 py-2 text-sm font-semibold ${chipStyles[index % chipStyles.length]}`}
-                >
-                  {taller}
-                </li>
-              ))}
-            </ul>
+
+            <div className="grid gap-6 md:grid-cols-3">
+              {school.ofertaAcademica.talleresExtraescolares.map((grupo) => {
+                const style = cicloStyles[grupo.id]
+                return (
+                  <div
+                    key={grupo.id}
+                    className={`rounded-xl border p-5 ${style.card}`}
+                  >
+                    <h4 className={`text-lg font-bold ${style.heading}`}>
+                      {grupo.ciclo}
+                    </h4>
+                    <p className="mb-4 text-sm text-gray-500">
+                      {grupo.cicloDescripcion}
+                    </p>
+                    <ul className="flex flex-wrap gap-2">
+                      {grupo.talleres.map((taller) => (
+                        <li
+                          key={taller.nombre}
+                          className={`rounded-full px-3 py-1.5 text-sm font-semibold ${style.chip}`}
+                        >
+                          <span>{taller.nombre}</span>
+                          {taller.horario && (
+                            <span className="ml-2 inline-block rounded-full bg-institucional-rojo/10 px-2 py-0.5 text-xs font-bold uppercase tracking-wide text-institucional-rojo">
+                              {taller.horario}
+                            </span>
+                          )}
+                          {taller.nota && (
+                            <span className="mt-0.5 block text-xs font-normal opacity-80">
+                              {taller.nota}
+                            </span>
+                          )}
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                )
+              })}
+            </div>
           </div>
         )}
 
