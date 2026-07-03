@@ -9,8 +9,14 @@ import Contacto from './components/sections/Contacto'
 function App() {
   return (
     <>
+      <a
+        href="#contenido-principal"
+        className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-md focus:bg-institucional-azul focus:px-4 focus:py-2 focus:font-semibold focus:text-white focus:shadow-lg"
+      >
+        Saltar al contenido principal
+      </a>
       <NavBar />
-      <main>
+      <main id="contenido-principal">
         <Hero />
         <Historia />
         <OfertaAcademica />

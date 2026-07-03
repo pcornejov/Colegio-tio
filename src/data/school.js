@@ -106,11 +106,26 @@ export const school = {
   },
 
   ofertaAcademica: {
+    // Niveles confirmados en el menú del sitio oficial escuelajosemcarrera.cl
+    // (más completo que la sola "Educación Básica" documentada antes).
     niveles: [
+      {
+        nombre: 'Educación Parvularia',
+        descripcion:
+          'Niveles de Transición NT1 y NT2 (Pre-Kínder y Kínder), primera etapa de la trayectoria educativa de los estudiantes.',
+      },
       {
         nombre: 'Educación Básica',
         descripcion:
           'Formación desde 1° a 8° básico, en modalidad de Jornada Escolar Completa (JEC).',
+      },
+      {
+        nombre: 'Curso Especial',
+        descripcion:
+          // TODO(confirm): confirmar con la dirección del establecimiento el
+          // público objetivo y funcionamiento exacto de este curso (listado
+          // en el menú del sitio oficial escuelajosemcarrera.cl).
+          'Nivel adicional informado por el sitio oficial del establecimiento. Confirmar con la dirección del colegio su público objetivo y funcionamiento exacto.',
       },
     ],
     jec: true,
@@ -120,6 +135,69 @@ export const school = {
       descripcion:
         'Programa de Integración Escolar (PIE) orientado a estudiantes con necesidades educativas especiales. Confirmar cobertura y cupos vigentes con la dirección del establecimiento.',
     },
+    // Talleres extraescolares confirmados en el sitio oficial
+    // escuelajosemcarrera.cl y coincidentes con publicaciones reales del
+    // Facebook oficial del colegio.
+    talleres: [
+      'Ajedrez',
+      'Danza / baile',
+      'Fútbol (damas)',
+      'Fútbol (hombres)',
+      'Guitarra',
+      'Computación',
+      'Formación ciudadana',
+      'Fotografía',
+      'Hilorama',
+      'Patrimonio',
+      'Pintura',
+      'Básquetbol',
+      'Tenis de mesa',
+      'Polideportivo',
+      'Yoga',
+      'Inglés (niveles parvularios)',
+      'Arte y manualidades',
+      'Huerto',
+    ],
+  },
+
+  // Proyecto Educativo Institucional (PEI): misión, visión y sellos
+  // confirmados textualmente en el sitio oficial escuelajosemcarrera.cl.
+  pei: {
+    eslogan: 'EDUCAR EN LA DIVERSIDAD',
+    mision:
+      'Somos una escuela que orienta con principios, valores éticos y morales, ' +
+      'proporcionando la formación de los estudiantes con el fin de emprender ' +
+      'continuidad de estudios.',
+    vision:
+      'Fortalecer el potencial de los estudiantes, para generar altas ' +
+      'expectativas, cultivando habilidades en función de un desarrollo integral.',
+    sellos: [
+      {
+        nombre: 'Aceptación a la Diversidad',
+        descripcion:
+          'Una comunidad escolar que acoge y valora las diferencias de cada estudiante.',
+      },
+      {
+        nombre: 'Compromiso Académico',
+        descripcion:
+          'Dedicación y exigencia compartida con el aprendizaje y los resultados educativos.',
+      },
+      {
+        nombre: 'Espíritu Crítico',
+        descripcion:
+          'Formación de estudiantes capaces de analizar y cuestionar su entorno con criterio propio.',
+      },
+      {
+        nombre: 'Resiliencia',
+        descripcion:
+          'Capacidad de sobreponerse a las dificultades y seguir avanzando en el proceso formativo.',
+      },
+      {
+        nombre: 'Espíritu Deportivo',
+        descripcion:
+          'Fomento de la actividad física, el juego limpio y el trabajo en equipo.',
+      },
+    ],
   },
 
   admision: {

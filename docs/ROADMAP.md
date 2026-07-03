@@ -37,22 +37,40 @@ URL en vivo: https://pcornejov.github.io/Colegio-tio/
       tres bloques (identidad, contacto, SLEP), NavBar completo con los 5
       anchors (`#inicio`, `#historia`, `#oferta-academica`, `#admision`,
       `#contacto`).
-- [ ] **Iteración 5 — Pulido / SEO / accesibilidad**: meta tags + Open
-      Graph + favicon, landmarks semánticos, skip-to-content, alt text,
-      contraste, `robots.txt` + `sitemap.xml`, cierre de este roadmap.
+- [x] **Iteración 5 — Pulido / SEO / accesibilidad (completada)**: ver
+      detalle en la sección "Iteración 5" más abajo. Con esto se cierran las
+      5 iteraciones planificadas de esta tanda.
+
+**Estado general: las 5 iteraciones de esta tanda están completas.** El
+sitio cuenta con sus 5 secciones (`#inicio`, `#historia`,
+`#oferta-academica`, `#admision`, `#contacto`), datos institucionales
+verificados con TODOs explícitos donde corresponde, paleta de colores real
+verificada por contraste, escudo propio, y mejoras de SEO/accesibilidad.
+Quedan pendientes de confirmación de contenido con el dueño humano (ver
+sección de pendientes) y una verificación operativa del despliegue (ver
+nota al final del documento).
 
 ## Decisiones de diseño
 
-- **Paleta institucional**: no se encontró una identidad visual / manual de
-  marca oficial del establecimiento. Se adoptó una paleta sobria inspirada
-  en los colores patrios chilenos (azul `#1E3A8A`, rojo `#B91C1C`) sobre un
-  fondo crema neutro (`#FAF7F0`), definida en `tailwind.config.js` bajo el
-  namespace `institucional`. **Esta paleta es reemplazable** si en el
-  futuro aparece una identidad visual oficial del colegio o del SLEP
-  Punilla Cordillera.
-- **Escudo**: `public/images/escudo-placeholder.svg` es un diseño genérico
-  de marcador de posición, no el escudo oficial (no encontrado). Reemplazar
-  cuando se disponga de uno verificado.
+- **Paleta institucional (v2, Iteración 5)**: reemplaza la paleta genérica
+  patria de la Iteración 2. Se basa en colores reales encontrados en el CSS
+  del sitio oficial `escuelajosemcarrera.cl` (azul marino `#08088a`,
+  mostaza/oliva `#c7c22c`, dorado `#e8d018`), definida en
+  `tailwind.config.js` bajo el namespace `institucional`. Las variantes
+  `mostaza` y `dorado` (sin sufijo) son versiones oscurecidas del tono
+  oficial: se verificó con cálculo de contraste WCAG que el tono oficial
+  vívido, usado como texto sobre blanco, NO alcanza AA (ratio ~2.9–3.1:1);
+  las versiones oscurecidas sí lo cumplen (~5.3:1 y ~5.7:1). Las variantes
+  `-claro` mantienen el tono oficial vívido, solo para uso decorativo
+  (fondos de chips, bordes, acentos), nunca como texto sobre fondo claro.
+- **Escudo (v2, Iteración 5)**: `public/images/escudo-placeholder.svg` fue
+  rediseñado como una **interpretación gráfica propia** (shield con fondo
+  blanco, borde azul marino, filete dorado, silueta de montañas azul marino
+  y antorcha central con llama naranja/roja sobre base mostaza), inspirada
+  en la forma y colores públicos de la identidad del establecimiento, pero
+  **no es una copia del logo oficial** (`logo.png` del sitio oficial), que
+  deliberadamente no se incorporó por no contar con autorización clara de
+  uso de un asset de terceros. Ver pendientes abajo.
 - **Sin React Router**: el sitio es de una sola página con anclas
   (`#inicio`, `#historia`, `#oferta-academica`, `#admision`, `#contacto`) y
   `scroll-behavior: smooth`, para evitar problemas de `basename` bajo
@@ -94,23 +112,102 @@ equipo. Se confirmaron y corrigieron los siguientes datos en
 El dígito verificador del RBD (`3744-3`) sigue sin confirmación adicional
 directa (ver pendientes abajo).
 
+## Iteración 5 — Pulido / SEO / accesibilidad (detalle)
+
+Fuente de los datos nuevos: sitio oficial `escuelajosemcarrera.cl`
+(páginas de inicio, "Nosotros", "Misión y Visión" y "Documentos", descargadas
+y grepeadas directamente) y publicaciones reales del Facebook oficial del
+colegio ("Escuela Jose M Carrera V", San Carlos), todo verificado
+personalmente antes de incorporarse.
+
+- **Contenido institucional nuevo** (`src/data/school.js`):
+  - Misión y Visión reales (textuales, sitio oficial).
+  - PEI: 5 sellos educativos (Aceptación a la Diversidad, Compromiso
+    Académico, Espíritu Crítico, Resiliencia, Espíritu Deportivo) y eslogan
+    "EDUCAR EN LA DIVERSIDAD".
+  - `ofertaAcademica.niveles` actualizado a 3 niveles reales (Educación
+    Parvularia NT1-NT2, Educación Básica 1°-8°, Curso Especial — este
+    último con `TODO(confirm)` sobre su público objetivo exacto).
+  - `ofertaAcademica.talleres`: 18 talleres extraescolares reales
+    (ajedrez, danza, fútbol damas/hombres, guitarra, computación, formación
+    ciudadana, fotografía, hilorama, patrimonio, pintura, básquetbol, tenis
+    de mesa, polideportivo, yoga, inglés parvulario, arte y manualidades,
+    huerto).
+  - Noticias reales en `OfertaAcademica.jsx` (reemplazan las 3 genéricas):
+    amistoso de fútbol vs. Cocosan Carlos, Torneo Interno de Ajedrez +
+    Taller de Ajedrez los jueves, Consejo de Evaluación y Reflexión
+    Docente (todas del 19 de junio, Facebook oficial).
+- **Misión/Visión/Sellos en UI**: nuevo bloque "Nuestro Proyecto Educativo"
+  dentro de `Admision.jsx` (no se creó un anchor de navegación nuevo, para
+  no romper la estructura de 5 secciones ya definida).
+- **Paleta de colores real**: ver "Decisiones de diseño" arriba. Aplicada
+  en `tailwind.config.js`; se revisaron con `grep` todos los usos
+  existentes de `institucional-*` en los componentes (ninguno usaba
+  `dorado` ni `rojo-oscuro`, así que no hubo riesgo de romper estilos ya
+  aplicados al renombrar/ajustar esos tokens).
+- **Escudo propio**: rediseño de
+  `public/images/escudo-placeholder.svg` (shield, no círculo; fondo
+  blanco; borde azul marino; filete dorado; montañas azul marino; antorcha
+  con llama naranja/roja sobre base mostaza), con comentario interno
+  explícito de que es una interpretación propia y no el archivo oficial.
+  También se actualizó `public/favicon.svg` con la misma paleta, como
+  versión simplificada del escudo.
+- **Alt text**: descrito de forma completa en `Historia.jsx` (indica
+  explícitamente que es una interpretación gráfica no oficial).
+- **SEO**: Open Graph básico (`og:type`, `og:locale`, `og:title`,
+  `og:description`, `og:url`, `og:site_name`) agregado en `index.html`;
+  `lang="es-CL"` ya estaba presente y se mantuvo; `meta name="description"`
+  ya existía. `public/robots.txt` ya existía y apuntaba correctamente a
+  `sitemap.xml`; se agregó `public/sitemap.xml` (sitio de una sola página,
+  con la URL raíz de GitHub Pages).
+- **Accesibilidad**: skip-link "Saltar al contenido principal" agregado
+  como primer elemento interactivo en `App.jsx` (visible solo al enfocar
+  con teclado, `sr-only focus:not-sr-only`), apuntando a
+  `#contenido-principal` (nuevo `id` en `<main>`). Se confirmaron los
+  landmarks semánticos ya existentes: `<header>` (NavBar, con
+  `aria-label="Navegación principal"`), `<main>`, `<footer>`. Jerarquía de
+  encabezados revisada (h1 en Hero, h2 por sección vía `SectionHeading`, h3
+  para subbloques como Noticias/Talleres/Misión-Visión/Sellos).
+- **Contraste AA**: verificado numéricamente (fórmula de luminancia
+  relativa WCAG) para todos los pares texto/fondo nuevos que usan
+  mostaza/dorado; ver comentario en `tailwind.config.js` con los ratios
+  exactos obtenidos.
+- **Build**: `npm run build` y `npm run lint` (oxlint) verificados sin
+  errores al cierre de esta iteración.
+
+### Alcance no cubierto en esta iteración (por decisión, no por olvido)
+
+- No se agregó `og:image`: no se contaba con un asset de imagen (PNG/JPG)
+  de buena calidad para vista previa social; el escudo es SVG. Si se desea,
+  se puede generar un PNG del escudo/hero para esto en una iteración
+  futura.
+- `Contacto.jsx` no requirió cambios de color: ya usaba los tokens
+  `institucional-azul`/`institucional-rojo`, que se mantuvieron en la
+  paleta nueva sin romper su apariencia.
+
 ## Pendientes para el dueño humano (confirmar antes de publicar como datos definitivos)
 
 - [ ] **RBD**: se encontró `3744-3` en el listado de establecimientos de
       sleppunillacordillera.gob.cl (mejor fuente que la búsqueda genérica
-      original), pero conviene validar el dígito verificador con Mineduc.
+      original), pero **el dígito verificador exacto sigue sin validar**
+      con Mineduc. No se marca como confirmado bajo ninguna circunstancia.
 - [ ] **Teléfono de contacto**: `+56 44 335 1923`, tomado del listado de
       establecimientos del SLEP. Confirmar vigencia con la dirección.
 - [ ] **Correo de contacto**: `escuelajosemiguelcarrera@sleppunillacordillera.cl`,
       tomado del mismo listado. Confirmar vigencia.
 - [ ] **Nombre de la dirección** (`Matilde Jofré Martínez`, según el mismo
       listado): puede cambiar: confirmar vigencia.
-- [ ] **Escudo/identidad visual oficial**, si existe, para reemplazar el
-      placeholder y la paleta de colores provisional.
+- [ ] **Escudo**: decidir si reemplazar el SVG propio (interpretación no
+      oficial, Iteración 5) por el archivo oficial `logo.png` del sitio
+      `escuelajosemcarrera.cl`, respetando los derechos de uso de ese
+      asset (confirmar con el colegio/SLEP si se puede usar directamente).
 - [ ] **Fechas exactas del proceso de Admisión Escolar (SAE)** del año en
       curso (se publican anualmente en sae.mineduc.cl).
 - [ ] **Confirmar detalles del Programa de Integración Escolar (PIE)**:
       disponibilidad, cupos y cobertura actual.
+- [ ] **Curso Especial**: confirmar con la dirección del establecimiento su
+      público objetivo y funcionamiento exacto (nivel listado en el menú
+      del sitio oficial, sin mayor detalle disponible).
 - [ ] **Año exacto de fundación** del establecimiento (no verificado; solo
       se documentó su funcionamiento inicial en una casona en San Carlos).
 - [ ] **Año exacto del traspaso** del Ministerio de Educación a la
@@ -118,6 +215,22 @@ directa (ver pendientes abajo).
 - [ ] Contrastar todo el contenido histórico e institucional directamente
       con https://sleppunillacordillera.gob.cl/ y con la dirección del
       establecimiento.
+
+## Nota operativa: verificación de despliegue pendiente
+
+Este es un hecho **operativo** (no un dato del colegio): al cierre de la
+Iteración 5, la conexión MCP a GitHub del agente Orquestador se cayó y
+requiere reautorización del usuario, por lo que **no se pudo verificar en
+esta sesión que el workflow de GitHub Actions haya desplegado
+correctamente** el resultado de esta iteración en
+https://pcornejov.github.io/Colegio-tio/. El commit sí se subió a la rama
+de trabajo `claude/carrera-school-website-plan-4wiguu`, y el workflow
+`.github/workflows/deploy.yml` está configurado para ejecutarse
+automáticamente en cada push a esa misma rama (ver hash del commit en el
+historial de git); falta confirmar manualmente, revisando la pestaña
+"Actions" del repo en GitHub, que esa ejecución del workflow terminó sin
+errores y que el sitio publicado en https://pcornejov.github.io/Colegio-tio/
+refleja los cambios de esta iteración.
 
 ## Notas técnicas
 

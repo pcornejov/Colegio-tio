@@ -11,6 +11,9 @@ export default function Hero() {
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-institucional-crema/80">
           {school.comuna}, {school.region} · Chile
         </p>
+        <span className="mb-5 inline-block rounded-full bg-institucional-dorado-claro/90 px-4 py-1.5 text-sm font-bold tracking-wide text-institucional-azul-oscuro shadow">
+          {school.pei.eslogan}
+        </span>
         <h1
           id="inicio-titulo"
           className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl"
