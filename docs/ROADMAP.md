@@ -104,6 +104,59 @@ cierre de QA de accesibilidad que verificó y corrigió el contraste AA y la
 claridad de los enlaces a PDF de todo lo construido en las iteraciones
 6-9.
 
+### Tercera tanda (iteración 11)
+
+- [x] **Iteración 11 — Galería de fotos + datos oficiales de Mineduc**:
+      - Nueva sección `#galeria` (`src/components/sections/Galeria.jsx`),
+        ubicada entre Vida Escolar y Admisión, con 3 fotografías reales del
+        establecimiento (fachada con el letrero "Escuela E-112 General José
+        Miguel Carrera V", la bandera chilena y el busto del General José
+        Miguel Carrera; y dos vistas de la biblioteca/CRA), en un layout de
+        mosaico (sin carrusel): la fachada como pieza destacada
+        (`sm:row-span-2`) y las dos fotos del CRA como dúo más pequeño.
+        Imágenes optimizadas (redimensionadas a 1200px de ancho máx.,
+        calidad JPEG ~80) y copiadas a `public/images/galeria/`
+        (`fachada.jpg`, `cra-1.jpg`, `cra-4.jpg`), referenciadas siempre con
+        `import.meta.env.BASE_URL` (nunca rutas absolutas, por el
+        `base: '/Colegio-tio/'` de `vite.config.js`). Debajo del mosaico, un
+        bloque de chips de infraestructura (`school.infraestructura.espacios`).
+        `NavBar.jsx` actualizado con el anchor `#galeria`.
+      - **Cifras oficiales de matrícula, docentes y promedio de alumnos por
+        curso** (`school.cifras`), fuente API oficial de Mineduc (RBD 3744),
+        mostradas como fila de 3 "stat tiles" en `Hero.jsx`. Esto resuelve el
+        pendiente de "Matrícula aproximada" (ver sección de pendientes).
+      - **Régimen y modalidad** del establecimiento (`school.regimen`: mixto,
+        laico, uniforme propio, sin internado) y **etiquetas oficiales**
+        (`school.etiquetasOficiales`: PIE, SEP, Gratuito), agregados como
+        nueva card y fila de chips respectivamente en `OfertaAcademica.jsx`.
+      - **Equipo de apoyo integral** (`school.ofertaAcademica.equipoApoyo`:
+        asistente social, fonoaudiólogo/a, psicólogo/a, psicopedagogo/a,
+        terapeuta ocupacional), nueva card en `OfertaAcademica.jsx`.
+      - **Nombre completo de la directora** actualizado a "Matilde de las
+        Mercedes Jofré Martínez" en `direccionEscolar.nombre`.
+      - **Talleres extraescolares**: se agregaron "Música", "Artes
+        Plásticas" y "Baby fútbol" al primer ciclo (sin fusionar con
+        "Pintura"/"Guitarra" ya existentes), y una nota aclaratoria en
+        "Computación" (segundo ciclo) indicando que también se reporta como
+        "TIC".
+      - **Nivel "Educación Básica"**: se agregó al final de su descripción
+        que incluye inglés como asignatura desde 1° básico.
+      - **Programas institucionales** (`school.vidaEscolar.programas`:
+        Convivencia escolar, Medioambiente, Educación sexual, Prevención de
+        drogas), nuevo subbloque con fila de chips en `VidaEscolar.jsx`.
+      - Todos los datos nuevos de esta iteración provienen de la API oficial
+        de Mineduc (RBD 3744) y ya están verificados, por lo que se
+        incorporaron **sin** comentarios `TODO(confirm)`.
+
+**Desviación respecto a la especificación**: el ítem A.7.6 de la
+especificación pedía agregar "Música" y "Artes Plásticas" "en el ciclo
+correspondiente" sin especificar cuál. Ante esa ambigüedad, se agregaron
+ambos talleres al **primer ciclo** (1° a 4° básico), por ser el ciclo con
+el conjunto de talleres más generalista/artístico de los dos ya existentes
+(el segundo ciclo tiene una oferta más diferenciada: Formación Ciudadana,
+Patrimonio, Fotografía, etc.). Si esta asignación de ciclo no es correcta,
+ajustar `talleresExtraescolares` en `src/data/school.js`.
+
 ## Decisiones de diseño
 
 - **Paleta institucional (v2, Iteración 5)**: reemplaza la paleta genérica
@@ -249,8 +302,10 @@ personalmente antes de incorporarse.
       establecimientos del SLEP. Confirmar vigencia con la dirección.
 - [ ] **Correo de contacto**: `escuelajosemiguelcarrera@sleppunillacordillera.cl`,
       tomado del mismo listado. Confirmar vigencia.
-- [ ] **Nombre de la dirección** (`Matilde Jofré Martínez`, según el mismo
-      listado): puede cambiar: confirmar vigencia.
+- [ ] **Nombre de la dirección** (`Matilde de las Mercedes Jofré Martínez`,
+      nombre completo confirmado por la API oficial de Mineduc en la
+      Iteración 11): el nombre en sí ya está confirmado, pero el cargo
+      puede cambiar: confirmar vigencia.
 - [ ] **Escudo**: decidir si reemplazar el SVG propio (interpretación no
       oficial, Iteración 5) por el archivo oficial `logo.png` del sitio
       `escuelajosemcarrera.cl`, respetando los derechos de uso de ese
@@ -269,12 +324,13 @@ personalmente antes de incorporarse.
 - [ ] Contrastar todo el contenido histórico e institucional directamente
       con https://sleppunillacordillera.gob.cl/ y con la dirección del
       establecimiento.
-- [ ] **Matrícula aproximada (≈224 alumnos)**: si esta cifra se menciona en
-      cualquier material de referencia del proyecto, es de **baja
-      confianza** — no fue verificada mediante fetch/consulta directa a una
-      fuente primaria (Mineduc/SLEP) por el equipo. No debe publicarse en
-      el sitio como dato definitivo hasta confirmarse con la dirección del
-      establecimiento o con una fuente oficial (p. ej. Directorio Mineduc).
+- [x] **Matrícula aproximada (≈224 alumnos)**: **resuelto en la Iteración
+      11.** La cifra de ≈224 alumnos mencionada en material de referencia
+      anterior era de baja confianza y queda descartada. La API oficial de
+      Mineduc (RBD 3744) confirma la matrícula real: **213 estudiantes**
+      (junto con 34 docentes y un promedio de 16 alumnos por curso), ya
+      incorporados en `school.cifras` y mostrados en `Hero.jsx`. Ya no es
+      un pendiente.
 - [ ] **Documentos institucionales con nombres de archivo desactualizados**
       (ver Iteración 8): el sitio oficial etiqueta los enlaces como "PEI -
       2025" y "Reglamento Interno y Convivencia - 2024-2025", pero ambos

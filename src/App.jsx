@@ -4,6 +4,7 @@ import Hero from './components/sections/Hero'
 import Historia from './components/sections/Historia'
 import OfertaAcademica from './components/sections/OfertaAcademica'
 import VidaEscolar from './components/sections/VidaEscolar'
+import Galeria from './components/sections/Galeria'
 import Admision from './components/sections/Admision'
 import Contacto from './components/sections/Contacto'
 
@@ -26,6 +27,7 @@ function App() {
         <Historia />
         <OfertaAcademica />
         <VidaEscolar />
+        <Galeria />
         <Admision />
         <Contacto />
       </main>

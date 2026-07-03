@@ -36,6 +36,14 @@ export const school = {
     sitioOficial: 'https://sleppunillacordillera.gob.cl/',
   },
 
+  // Cifras oficiales del establecimiento. Fuente: API oficial de Mineduc
+  // (RBD 3744).
+  cifras: {
+    matricula: 213,
+    docentes: 34,
+    promedioAlumnosPorCurso: 16,
+  },
+
   contacto: {
     // Fuente: listado de establecimientos de sleppunillacordillera.gob.cl.
     // TODO(confirm): confirmar formato/vigencia directamente con la dirección del establecimiento.
@@ -54,8 +62,33 @@ export const school = {
   // directamente por el dueño del proyecto, por lo que ya no es un
   // TODO(confirm) pendiente de validar con el SLEP.
   direccionEscolar: {
-    nombre: 'Matilde Jofré Martínez',
+    // Nombre completo confirmado. Fuente: API oficial de Mineduc (RBD 3744).
+    nombre: 'Matilde de las Mercedes Jofré Martínez',
     horarioAtencion: 'Lunes a Jueves 8:15 a 18:00, Viernes 8:15 a 13:00',
+  },
+
+  // Régimen y modalidad del establecimiento. Fuente: API oficial de Mineduc
+  // (RBD 3744).
+  regimen: {
+    tipo: 'Mixto',
+    laico: true,
+    uniforme: 'Uniforme propio del establecimiento',
+    internado: false,
+  },
+
+  // Etiquetas oficiales del establecimiento. Fuente: API oficial de Mineduc
+  // (RBD 3744).
+  etiquetasOficiales: ['PIE', 'SEP', 'Gratuito'],
+
+  // Espacios de infraestructura del establecimiento.
+  // Fuente: API oficial de Mineduc, RBD 3744.
+  infraestructura: {
+    espacios: [
+      'Biblioteca (CRA)',
+      'Cancha techada',
+      'Sala de computación',
+      'SUM (Salón de Usos Múltiples)',
+    ],
   },
 
   historia: {
@@ -126,7 +159,9 @@ export const school = {
       {
         nombre: 'Educación Básica',
         descripcion:
-          'Formación desde 1° a 8° básico, en modalidad de Jornada Escolar Completa (JEC).',
+          'Formación desde 1° a 8° básico, en modalidad de Jornada Escolar Completa (JEC). ' +
+          // Fuente: API oficial de Mineduc (RBD 3744).
+          'Incluye inglés como asignatura desde 1° básico.',
       },
       {
         nombre: 'Curso Especial',
@@ -144,6 +179,15 @@ export const school = {
       descripcion:
         'Programa de Integración Escolar (PIE) orientado a estudiantes con necesidades educativas especiales. Confirmar cobertura y cupos vigentes con la dirección del establecimiento.',
     },
+    // Equipo de apoyo integral del establecimiento. Fuente: API oficial de
+    // Mineduc (RBD 3744).
+    equipoApoyo: [
+      'Asistente social',
+      'Fonoaudiólogo/a',
+      'Psicólogo/a',
+      'Psicopedagogo/a',
+      'Terapeuta ocupacional',
+    ],
     // Talleres extraescolares agrupados por ciclo, confirmados en la página
     // "Cursos" del sitio oficial escuelajosemcarrera.cl (HTML descargado
     // localmente para esta investigación). El horario del Taller de Ajedrez
@@ -166,10 +210,15 @@ export const school = {
         cicloDescripcion: '1° a 4° básico',
         talleres: [
           { nombre: 'Arte y Recreación' },
+          // Fuente: API oficial de Mineduc (RBD 3744).
+          { nombre: 'Artes Plásticas' },
+          { nombre: 'Baby fútbol' },
           { nombre: 'Baile / Danza' },
           { nombre: 'Guitarra' },
           { nombre: 'Huerto' },
           { nombre: 'Manualidades' },
+          // Fuente: API oficial de Mineduc (RBD 3744).
+          { nombre: 'Música' },
           { nombre: 'Origami' },
           { nombre: 'Pintura' },
           { nombre: 'Polideportivo 1° y 2° básico', horario: 'Lunes' },
@@ -189,7 +238,8 @@ export const school = {
             nota: '5°, 7° y 8° básico, en la biblioteca',
           },
           { nombre: 'Baile' },
-          { nombre: 'Computación' },
+          // Fuente: API oficial de Mineduc (RBD 3744).
+          { nombre: 'Computación', nota: 'También reportado como TIC' },
           { nombre: 'Formación Ciudadana' },
           { nombre: 'Fotografía' },
           { nombre: 'Fútbol Damas' },
@@ -242,6 +292,14 @@ export const school = {
         descripcion:
           'El 22 de abril conmemoramos el Día Internacional de la Tierra, generando espacios de reflexión sobre el cuidado del medioambiente. Una fecha que invita a nuestra comunidad escolar a fortalecer hábitos sustentables.',
       },
+    ],
+    // Programas institucionales del establecimiento. Fuente: API oficial de
+    // Mineduc (RBD 3744).
+    programas: [
+      'Convivencia escolar',
+      'Medioambiente',
+      'Educación sexual',
+      'Prevención de drogas',
     ],
   },
 
