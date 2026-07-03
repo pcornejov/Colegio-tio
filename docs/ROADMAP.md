@@ -39,16 +39,36 @@ URL en vivo: https://pcornejov.github.io/Colegio-tio/
       `#contacto`).
 - [x] **Iteración 5 — Pulido / SEO / accesibilidad (completada)**: ver
       detalle en la sección "Iteración 5" más abajo. Con esto se cierran las
-      5 iteraciones planificadas de esta tanda.
+      5 iteraciones planificadas de la primera tanda.
 
-**Estado general: las 5 iteraciones de esta tanda están completas.** El
-sitio cuenta con sus 5 secciones (`#inicio`, `#historia`,
-`#oferta-academica`, `#admision`, `#contacto`), datos institucionales
-verificados con TODOs explícitos donde corresponde, paleta de colores real
-verificada por contraste, escudo propio, y mejoras de SEO/accesibilidad.
-Quedan pendientes de confirmación de contenido con el dueño humano (ver
-sección de pendientes) y una verificación operativa del despliegue (ver
-nota al final del documento).
+**Estado de la primera tanda: completa (5/5).** El sitio cuenta con sus 5
+secciones (`#inicio`, `#historia`, `#oferta-academica`, `#admision`,
+`#contacto`), datos institucionales verificados con TODOs explícitos donde
+corresponde, paleta de colores real verificada por contraste, escudo
+propio, y mejoras de SEO/accesibilidad.
+
+### Segunda tanda (iteraciones 6-10)
+
+- [x] **Iteración 6 — Vida Escolar**: sección `#vida-escolar` con
+      actividades reales del colegio (fútbol, ajedrez, Juramento a la
+      Bandera, Semana del Libro, Día de la Tierra) descritas con texto e
+      iconografía genérica — sin fotos de estudiantes identificables, por
+      decisión explícita del dueño del proyecto sobre protección de
+      menores.
+- [x] **Iteración 7 — Talleres extraescolares**: talleres reales
+      (ajedrez, danza, fútbol, guitarra) agrupados por ciclo con horarios.
+- [x] **Iteración 8 — Equipo directivo, contacto ampliado y documentos**:
+      nombre de la directora y horario de atención agregados a Contacto;
+      bloque de documentos institucionales (PEI, reglamentos) enlazado.
+- [x] **Iteración 9 — Identidad visual final**: auditoría de paleta del
+      Diseñador aplicada — se corrigió el ritmo de alternancia de fondos
+      de sección (`Admision.jsx` y `Contacto.jsx` habían quedado ambas en
+      `bg-white`, rompiendo la secuencia blanco/crema; ahora alternan
+      correctamente) y se agregó una franja decorativa fina (`h-1.5`,
+      gradiente `institucional-azul-oscuro` → `institucional-mostaza-claro`
+      → `institucional-dorado-claro`, sin texto, `aria-hidden`) en la parte
+      superior de `App.jsx`, sin modificar `Hero.jsx`.
+- [ ] **Iteración 10 — Pulido final de la tanda**: pendiente.
 
 ## Decisiones de diseño
 

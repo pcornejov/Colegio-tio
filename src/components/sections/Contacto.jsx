@@ -11,7 +11,7 @@ const OSM_LINK =
 
 export default function Contacto() {
   return (
-    <section id="contacto" aria-labelledby="contacto-titulo" className="bg-institucional-crema py-20">
+    <section id="contacto" aria-labelledby="contacto-titulo" className="bg-white py-20">
       <div className="mx-auto max-w-6xl px-4">
         <SectionHeading
           id="contacto-titulo"
