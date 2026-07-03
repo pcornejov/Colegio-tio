@@ -160,6 +160,45 @@ export const school = {
     ],
   },
 
+  // Vida escolar: actividades deportivas, culturales y cívicas reales del
+  // colegio, confirmadas mediante publicaciones del Facebook oficial del
+  // colegio ("Escuela Jose M Carrera V", San Carlos) y datos ya validados
+  // en investigación previa del equipo. No requieren TODO(confirm).
+  vidaEscolar: {
+    actividades: [
+      {
+        id: 'futbol-escolar',
+        titulo: 'Fútbol escolar',
+        descripcion:
+          'Nuestros estudiantes disputaron un partido amistoso de fútbol contra el colegio Cocosan Carlos, en la cancha del estadio propio del establecimiento. Una instancia de encuentro deportivo y sana competencia entre colegios de la comuna.',
+      },
+      {
+        id: 'ajedrez',
+        titulo: 'Ajedrez',
+        descripcion:
+          'Cada jueves se realiza el Taller de Ajedrez para estudiantes de 5°, 7° y 8° básico en la biblioteca del colegio. La actividad culmina en un Torneo Interno de Ajedrez, con entrega de certificados a los participantes.',
+      },
+      {
+        id: 'juramento-bandera',
+        titulo: 'Juramento a la Bandera',
+        descripcion:
+          "El 11 de mayo, la Brigada Escolar realizó su ceremonia de Juramento a la Bandera en el Parque O'Higgins de Chillán Viejo. Un acto cívico que fortalece el compromiso de nuestros estudiantes con los símbolos patrios.",
+      },
+      {
+        id: 'semana-del-libro',
+        titulo: 'Semana del Libro',
+        descripcion:
+          'Durante la Semana del Libro, cada sala de clases fue decorada como la portada de una obra literaria, transformando los pasillos del colegio en un recorrido de lectura. Una iniciativa que fomenta el gusto por los libros de forma creativa.',
+      },
+      {
+        id: 'dia-internacional-tierra',
+        titulo: 'Día Internacional de la Tierra',
+        descripcion:
+          'El 22 de abril conmemoramos el Día Internacional de la Tierra, generando espacios de reflexión sobre el cuidado del medioambiente. Una fecha que invita a nuestra comunidad escolar a fortalecer hábitos sustentables.',
+      },
+    ],
+  },
+
   // Proyecto Educativo Institucional (PEI): misión, visión y sellos
   // confirmados textualmente en el sitio oficial escuelajosemcarrera.cl.
   pei: {
