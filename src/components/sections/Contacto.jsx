@@ -1,7 +1,7 @@
 import SectionHeading from '../ui/SectionHeading'
 import { school } from '../../data/school'
 
-// Ituhue 426, San Carlos, Ñuble (coordenadas aproximadas del centro de San
+// Itihue 426, San Carlos, Ñuble (coordenadas aproximadas del centro de San
 // Carlos, Ñuble; el pin exacto puede ajustarse cuando se confirme la
 // ubicación precisa del establecimiento).
 const OSM_EMBED_SRC =
