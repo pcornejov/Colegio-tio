@@ -68,7 +68,41 @@ propio, y mejoras de SEO/accesibilidad.
       gradiente `institucional-azul-oscuro` → `institucional-mostaza-claro`
       → `institucional-dorado-claro`, sin texto, `aria-hidden`) en la parte
       superior de `App.jsx`, sin modificar `Hero.jsx`.
-- [ ] **Iteración 10 — Pulido final de la tanda**: pendiente.
+- [x] **Iteración 10 — Pulido final de la tanda (QA de accesibilidad)**:
+      auditoría manual de accesibilidad sobre el contenido nuevo de las
+      iteraciones 6-9, con 2 problemas reales encontrados y corregidos:
+      1. **Contraste AA roto por `opacity-80`** en el span de
+         `taller.nota` de `OfertaAcademica.jsx`: se calculó numéricamente
+         (fórmula de luminancia relativa WCAG) que la opacidad bajaba el
+         contraste de `primer-ciclo` de 4.7:1 a 3.24:1 (falla AA) y de
+         `segundo-ciclo` de 5.24:1 a 3.52:1 (falla AA) — este último es el
+         grupo que incluye el horario del Taller de Ajedrez. Se quitó la
+         clase `opacity-80`, restaurando el cumplimiento AA sin cambiar
+         colores.
+      2. **Enlaces a PDF sin indicación textual** de que abren en pestaña
+         nueva y apuntan a un archivo PDF (WCAG 3.2.5): se agregó un texto
+         visible `(PDF, abre en pestaña nueva)` junto a cada nombre de
+         documento en el bloque "Documentos institucionales" de
+         `Contacto.jsx`, visible para todos los usuarios (no solo
+         `sr-only`).
+      Verificación adicional de QA (sin hallazgos nuevos): los 5 SVG
+      decorativos de `VidaEscolar.jsx` tienen `aria-hidden="true"` y
+      `focusable="false"`; la jerarquía de encabezados en `VidaEscolar.jsx`
+      y en "Talleres extraescolares" de `OfertaAcademica.jsx` es correcta
+      (h2 → h3 → h4, sin saltos, listas `<ul>`/`<li>` semánticamente
+      correctas); la franja decorativa de `App.jsx` tiene `aria-hidden` y,
+      al no ser focuseable, no interfiere con que el skip-link siga siendo
+      el primer elemento enfocable de la página.
+
+**Estado de la segunda tanda: completa (5/5, iteraciones 6-10).** La
+segunda tanda agregó una sección de Vida Escolar sin fotos de personas
+(iconografía genérica), talleres extraescolares reales agrupados por ciclo
+con horarios, un bloque de contacto ampliado con directora, horario de
+atención y documentos institucionales descargables, la consolidación final
+de la identidad visual (alternancia de fondos y franja de acento), y un
+cierre de QA de accesibilidad que verificó y corrigió el contraste AA y la
+claridad de los enlaces a PDF de todo lo construido en las iteraciones
+6-9.
 
 ## Decisiones de diseño
 
@@ -235,6 +269,22 @@ personalmente antes de incorporarse.
 - [ ] Contrastar todo el contenido histórico e institucional directamente
       con https://sleppunillacordillera.gob.cl/ y con la dirección del
       establecimiento.
+- [ ] **Matrícula aproximada (≈224 alumnos)**: si esta cifra se menciona en
+      cualquier material de referencia del proyecto, es de **baja
+      confianza** — no fue verificada mediante fetch/consulta directa a una
+      fuente primaria (Mineduc/SLEP) por el equipo. No debe publicarse en
+      el sitio como dato definitivo hasta confirmarse con la dirección del
+      establecimiento o con una fuente oficial (p. ej. Directorio Mineduc).
+- [ ] **Documentos institucionales con nombres de archivo desactualizados**
+      (ver Iteración 8): el sitio oficial etiqueta los enlaces como "PEI -
+      2025" y "Reglamento Interno y Convivencia - 2024-2025", pero ambos
+      apuntan a archivos PDF cuyo nombre de archivo y ruta corresponden a
+      años anteriores (`PEI-2021.pdf` en la ruta `/uploads/2021/12/` y
+      `Reglamento-de-de-Convivencia-Escolar-Esc.-Gral.-JMCV-1.pdf` en la
+      ruta `/uploads/2019/04/`, respectivamente). Confirmar con el colegio
+      si el contenido de esos PDFs efectivamente está actualizado a
+      2024-2025/2025, o si son archivos antiguos que no se han vuelto a
+      subir con el nombre correspondiente.
 
 ## Nota operativa: verificación de despliegue pendiente
 

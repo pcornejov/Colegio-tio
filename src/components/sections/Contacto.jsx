@@ -147,6 +147,9 @@ export default function Contacto() {
                   <div>
                     <p className="font-semibold text-institucional-azul underline-offset-2 hover:underline">
                       {documento.nombre}
+                      <span className="mt-0.5 block text-xs font-normal text-gray-500">
+                        (PDF, abre en pestaña nueva)
+                      </span>
                     </p>
                     {documento.descripcion && (
                       <p className="mt-1 text-sm text-gray-600">{documento.descripcion}</p>
