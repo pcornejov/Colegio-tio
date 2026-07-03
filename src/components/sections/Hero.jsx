@@ -40,6 +40,31 @@ export default function Hero() {
             Sitio del SLEP Punilla Cordillera
           </a>
         </div>
+
+        {school.cifras && (
+          <div className="mt-12 grid w-full max-w-2xl grid-cols-3 gap-4">
+            <div className="rounded-lg border border-institucional-crema/20 bg-institucional-crema/5 px-4 py-5">
+              <p className="text-3xl font-bold">{school.cifras.matricula}</p>
+              <p className="mt-1 text-sm text-institucional-crema/80">
+                Estudiantes matriculados
+              </p>
+            </div>
+            <div className="rounded-lg border border-institucional-crema/20 bg-institucional-crema/5 px-4 py-5">
+              <p className="text-3xl font-bold">{school.cifras.docentes}</p>
+              <p className="mt-1 text-sm text-institucional-crema/80">
+                Docentes
+              </p>
+            </div>
+            <div className="rounded-lg border border-institucional-crema/20 bg-institucional-crema/5 px-4 py-5">
+              <p className="text-3xl font-bold">
+                {school.cifras.promedioAlumnosPorCurso}
+              </p>
+              <p className="mt-1 text-sm text-institucional-crema/80">
+                Alumnos/as por curso (promedio)
+              </p>
+            </div>
+          </div>
+        )}
       </div>
     </section>
   )

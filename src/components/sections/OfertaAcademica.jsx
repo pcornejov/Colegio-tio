@@ -58,6 +58,19 @@ export default function OfertaAcademica() {
           subtitle="Educación Parvularia, Básica y Curso Especial, con Jornada Escolar Completa, apoyo a la inclusión y una amplia oferta de talleres extraescolares."
         />
 
+        {school.etiquetasOficiales?.length > 0 && (
+          <ul className="mb-10 flex flex-wrap justify-center gap-2">
+            {school.etiquetasOficiales.map((etiqueta) => (
+              <li
+                key={etiqueta}
+                className="rounded-full border border-institucional-azul-claro/40 bg-institucional-azul-claro/10 px-3 py-1.5 text-sm font-semibold text-institucional-azul-oscuro"
+              >
+                {etiqueta}
+              </li>
+            ))}
+          </ul>
+        )}
+
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
           {school.ofertaAcademica.niveles.map((nivel) => (
             <Card key={nivel.nombre} title={nivel.nombre}>
@@ -79,6 +92,27 @@ export default function OfertaAcademica() {
           {school.ofertaAcademica.pie?.disponible && (
             <Card title="Programa de Integración Escolar (PIE)">
               <p>{school.ofertaAcademica.pie.descripcion}</p>
+            </Card>
+          )}
+
+          {school.ofertaAcademica.equipoApoyo?.length > 0 && (
+            <Card title="Equipo de apoyo integral">
+              <ul className="list-inside list-disc space-y-1">
+                {school.ofertaAcademica.equipoApoyo.map((item) => (
+                  <li key={item}>{item}</li>
+                ))}
+              </ul>
+            </Card>
+          )}
+
+          {school.regimen && (
+            <Card title="Régimen y modalidad">
+              <ul className="list-inside list-disc space-y-1">
+                <li>{school.regimen.tipo}</li>
+                <li>{school.regimen.laico ? 'Laico' : 'Confesional'}</li>
+                <li>{school.regimen.uniforme}</li>
+                <li>{school.regimen.internado ? 'Con internado' : 'Sin internado'}</li>
+              </ul>
             </Card>
           )}
         </div>
