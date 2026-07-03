@@ -75,6 +75,25 @@ teléfono, correo y nombre de la dirección vigente, ya incorporados a
 `src/data/school.js` (con TODOs internos donde corresponde verificación
 adicional).
 
+## Corrección posterior a Iteración 4 (fuente: Facebook oficial del colegio)
+
+El dueño del repo compartió capturas del Facebook oficial del colegio
+("Escuela Jose M Carrera V", San Carlos), verificadas directamente por el
+equipo. Se confirmaron y corrigieron los siguientes datos en
+`src/data/school.js` y `src/components/sections/Contacto.jsx`:
+
+- **Nombre de la calle**: es **"Itihue"**, no "Ituhue" como estaba escrito
+  antes (confirmado en la ficha de Facebook — "Itihue #426" — y en un
+  gráfico institucional oficial — "Itihue 426 - San Carlos").
+- **Dependencia del SLEP Punilla Cordillera**: confirmada explícitamente en
+  el campo de dependencia de la ficha de Facebook y en el mismo gráfico
+  institucional.
+- **Designación "Escuela E-112"**: confirmada visualmente en el letrero de
+  la fachada del edificio, visible en la foto de portada de Facebook.
+
+El dígito verificador del RBD (`3744-3`) sigue sin confirmación adicional
+directa (ver pendientes abajo).
+
 ## Pendientes para el dueño humano (confirmar antes de publicar como datos definitivos)
 
 - [ ] **RBD**: se encontró `3744-3` en el listado de establecimientos de

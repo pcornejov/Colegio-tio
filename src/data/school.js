@@ -4,7 +4,7 @@
 // establecimiento homónimo "José Miguel Carrera Verdugo" administrado por
 // el SLEP Colchagua en Chimbarongo, O'Higgins (dominio jmcarrera.slepcol.cl,
 // NO relacionado con este colegio). Todo lo aquí contenido corresponde
-// exclusivamente al establecimiento de San Carlos, Ñuble (Ituhue 426),
+// exclusivamente al establecimiento de San Carlos, Ñuble (Itihue 426),
 // administrado por el SLEP Punilla Cordillera (sleppunillacordillera.gob.cl).
 // Los campos marcados con TODO(confirm) no han sido verificados con una
 // fuente oficial primaria y deben confirmarse antes de tratarse como
@@ -17,12 +17,19 @@ export const school = {
   region: 'Región de Ñuble',
   pais: 'Chile',
 
-  direccion: 'Ituhue 426, San Carlos, Región de Ñuble, Chile',
+  // Dirección confirmada en la ficha de Facebook oficial del colegio
+  // ("Itihue #426") y en un gráfico institucional oficial ("Itihue 426 -
+  // San Carlos"): el nombre correcto de la calle es "Itihue", no "Ituhue".
+  direccion: 'Itihue 426, San Carlos, Región de Ñuble, Chile',
 
   // Fuente: listado de establecimientos de sleppunillacordillera.gob.cl.
   // TODO(confirm): validar dígito verificador y formato con Mineduc/DEG.
   rbd: '3744-3',
 
+  // Dependencia confirmada: la ficha oficial de Facebook del colegio
+  // ("Escuela Jose M Carrera V", San Carlos) indica explícitamente
+  // "SLEP Punilla Cordillera" en su campo de dependencia, y coincide con
+  // un gráfico institucional oficial. Ya no requiere confirmación adicional.
   slep: {
     nombre: 'SLEP Punilla Cordillera',
     cobertura: ['Coihueco', 'Ñiquén', 'Pinto', 'San Carlos', 'San Fabián'],
@@ -69,6 +76,9 @@ export const school = {
       },
       {
         anio: '1978',
+        // Designación confirmada: visible en el letrero de la fachada del
+        // edificio real ("ESCUELA E 112 GENERAL JOSE MIGUEL CARRERA V"),
+        // fotografía de portada del Facebook oficial del colegio.
         evento: 'Clasificación del establecimiento como Escuela E-112.',
       },
       {
