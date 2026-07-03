@@ -18,17 +18,20 @@ URL en vivo: https://pcornejov.github.io/Colegio-tio/
       despliegue en `.github/workflows/deploy.yml`, datos institucionales en
       `src/data/school.js`, `App.jsx` mínimo con NavBar + Hero (`#inicio`) +
       Footer.
-- [ ] **Iteración 2 — Historia + identidad visual**: sección `#historia` con
+- [x] **Iteración 2 — Historia + identidad visual**: sección `#historia` con
       narrativa real del establecimiento, paleta de colores definitiva en
       `tailwind.config.js`, escudo placeholder en `public/images/`, NavBar
-      actualizado.
+      actualizado con el anchor `#historia`. Se corrigió una referencia
+      errónea al dominio `jmcarrera.slepcol.cl` (ver nota abajo) y se
+      incorporaron datos de contacto reales encontrados en el sitio oficial
+      del SLEP Punilla Cordillera.
 - [ ] **Iteración 3 — Oferta académica**: sección `#oferta-academica`
       (niveles, JEC, PIE), posible bloque estático de noticias, NavBar
       actualizado.
 - [ ] **Iteración 4 — Admisión + Contacto**: sección `#admision` (proceso
       SAE genérico), sección `#contacto` (dirección, mapa embebido
-      OpenStreetMap, referencia a jmcarrera.slepcol.cl), Footer final,
-      NavBar completo con los 5 anchors.
+      OpenStreetMap, referencia a sleppunillacordillera.gob.cl), Footer
+      final, NavBar completo con los 5 anchors.
 - [ ] **Iteración 5 — Pulido / SEO / accesibilidad**: meta tags + Open
       Graph + favicon, landmarks semánticos, skip-to-content, alt text,
       contraste, `robots.txt` + `sitemap.xml`, cierre de este roadmap.
@@ -50,14 +53,34 @@ URL en vivo: https://pcornejov.github.io/Colegio-tio/
   `scroll-behavior: smooth`, para evitar problemas de `basename` bajo
   GitHub Pages.
 
+## Corrección importante encontrada en Iteración 2 (dominio homónimo)
+
+El brief original sugería `https://jmcarrera.slepcol.cl/` como sitio de
+referencia del establecimiento. Al visitarlo (WebFetch), ese dominio
+corresponde a **otra escuela homónima** "José Miguel Carrera Verdugo",
+administrada por el **SLEP Colchagua**, ubicada en Ruta I-85-J, Camino
+Codegua, localidad El Sauce, Chimbarongo (Región de O'Higgins) — NO tiene
+relación con el establecimiento de San Carlos, Ñuble. Se corrigió la
+referencia al sitio oficial correcto: **https://sleppunillacordillera.gob.cl/**
+(sitio del SLEP Punilla Cordillera, que sí administra San Carlos, Ñuble).
+En el listado de establecimientos de ese sitio
+(`/establecimientos-educacionales-2/`) se encontró y confirmó la ficha real
+de la "Escuela Gral. José Miguel Carrera Verdugo" con RBD, dirección,
+teléfono, correo y nombre de la dirección vigente, ya incorporados a
+`src/data/school.js` (con TODOs internos donde corresponde verificación
+adicional).
+
 ## Pendientes para el dueño humano (confirmar antes de publicar como datos definitivos)
 
-- [ ] **RBD**: se encontró el valor `3744` en búsquedas, pero sin fuente
-      oficial verificada. Confirmar en mineduc.cl / SLEP Punilla Cordillera.
-- [ ] **Teléfono de contacto real** del establecimiento (placeholder
-      actual: `+56 42 000 0000`).
-- [ ] **Correo electrónico de contacto real** (placeholder actual:
-      `contacto@jmcarrera.slepcol.cl`).
+- [ ] **RBD**: se encontró `3744-3` en el listado de establecimientos de
+      sleppunillacordillera.gob.cl (mejor fuente que la búsqueda genérica
+      original), pero conviene validar el dígito verificador con Mineduc.
+- [ ] **Teléfono de contacto**: `+56 44 335 1923`, tomado del listado de
+      establecimientos del SLEP. Confirmar vigencia con la dirección.
+- [ ] **Correo de contacto**: `escuelajosemiguelcarrera@sleppunillacordillera.cl`,
+      tomado del mismo listado. Confirmar vigencia.
+- [ ] **Nombre de la dirección** (`Matilde Jofré Martínez`, según el mismo
+      listado): puede cambiar: confirmar vigencia.
 - [ ] **Escudo/identidad visual oficial**, si existe, para reemplazar el
       placeholder y la paleta de colores provisional.
 - [ ] **Fechas exactas del proceso de Admisión Escolar (SAE)** del año en
@@ -69,8 +92,8 @@ URL en vivo: https://pcornejov.github.io/Colegio-tio/
 - [ ] **Año exacto del traspaso** del Ministerio de Educación a la
       administración municipal (se documentó "alrededor de 1983").
 - [ ] Contrastar todo el contenido histórico e institucional directamente
-      con https://jmcarrera.slepcol.cl/ cuando el sitio esté accesible, y
-      con la dirección del establecimiento.
+      con https://sleppunillacordillera.gob.cl/ y con la dirección del
+      establecimiento.
 
 ## Notas técnicas
 

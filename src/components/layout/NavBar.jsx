@@ -1,7 +1,10 @@
 import { useState } from 'react'
 import { school } from '../../data/school'
 
-const navItems = [{ href: '#inicio', label: 'Inicio' }]
+const navItems = [
+  { href: '#inicio', label: 'Inicio' },
+  { href: '#historia', label: 'Historia' },
+]
 
 export default function NavBar() {
   const [open, setOpen] = useState(false)

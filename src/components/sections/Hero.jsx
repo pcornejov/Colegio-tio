@@ -29,7 +29,7 @@ export default function Hero() {
             Conoce nuestra historia
           </a>
           <a
-            href={school.contacto.sitioReferencia}
+            href={school.slep.sitioOficial}
             target="_blank"
             rel="noreferrer"
             className="rounded-lg border border-institucional-crema/60 px-6 py-3 font-semibold text-institucional-crema transition hover:bg-institucional-crema/10"

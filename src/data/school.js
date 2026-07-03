@@ -1,12 +1,15 @@
 // Datos institucionales de la Escuela José Miguel Carrera Verdugo.
 // IMPORTANTE: existen colegios homónimos "José Miguel Carrera" en otras
-// comunas de Chile (Los Andes, La Serena, etc.). Todo lo aquí contenido
-// corresponde exclusivamente al establecimiento de San Carlos, Ñuble
-// (Ituhue 426), administrado por el SLEP Punilla Cordillera.
+// comunas de Chile (Los Andes, La Serena, etc.), e incluso otro
+// establecimiento homónimo "José Miguel Carrera Verdugo" administrado por
+// el SLEP Colchagua en Chimbarongo, O'Higgins (dominio jmcarrera.slepcol.cl,
+// NO relacionado con este colegio). Todo lo aquí contenido corresponde
+// exclusivamente al establecimiento de San Carlos, Ñuble (Ituhue 426),
+// administrado por el SLEP Punilla Cordillera (sleppunillacordillera.gob.cl).
 // Los campos marcados con TODO(confirm) no han sido verificados con una
-// fuente oficial y deben confirmarse antes de tratarse como definitivos.
-// Estos comentarios son solo para uso interno del equipo de desarrollo y
-// nunca deben mostrarse en la interfaz pública del sitio.
+// fuente oficial primaria y deben confirmarse antes de tratarse como
+// definitivos. Estos comentarios son solo para uso interno del equipo de
+// desarrollo y nunca deben mostrarse en la interfaz pública del sitio.
 
 export const school = {
   nombreOficial: 'Escuela José Miguel Carrera Verdugo',
@@ -16,22 +19,28 @@ export const school = {
 
   direccion: 'Ituhue 426, San Carlos, Región de Ñuble, Chile',
 
-  // TODO(confirm): RBD no verificado oficialmente
-  rbd: '3744',
+  // Fuente: listado de establecimientos de sleppunillacordillera.gob.cl.
+  // TODO(confirm): validar dígito verificador y formato con Mineduc/DEG.
+  rbd: '3744-3',
 
   slep: {
     nombre: 'SLEP Punilla Cordillera',
     cobertura: ['Coihueco', 'Ñiquén', 'Pinto', 'San Carlos', 'San Fabián'],
-    sitioOficial: 'https://jmcarrera.slepcol.cl/',
+    sitioOficial: 'https://sleppunillacordillera.gob.cl/',
   },
 
   contacto: {
-    // TODO(confirm): teléfono real de contacto no encontrado, confirmar con SLEP/dirección
-    telefono: '+56 42 000 0000',
-    // TODO(confirm): correo real de contacto no encontrado, confirmar con SLEP/dirección
-    email: 'contacto@jmcarrera.slepcol.cl',
-    sitioReferencia: 'https://jmcarrera.slepcol.cl/',
+    // Fuente: listado de establecimientos de sleppunillacordillera.gob.cl.
+    // TODO(confirm): confirmar formato/vigencia directamente con la dirección del establecimiento.
+    telefono: '+56 44 335 1923',
+    // Fuente: listado de establecimientos de sleppunillacordillera.gob.cl.
+    email: 'escuelajosemiguelcarrera@sleppunillacordillera.cl',
+    sitioReferencia: 'https://sleppunillacordillera.gob.cl/establecimientos-educacionales-2/',
   },
+
+  // TODO(confirm): nombre de la dirección vigente al momento de esta consulta
+  // (fuente: sleppunillacordillera.gob.cl). Puede cambiar; confirmar con el SLEP.
+  direccionEscolar: 'Matilde Jofré Martínez',
 
   historia: {
     resumen:
