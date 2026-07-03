@@ -8,7 +8,7 @@ export default function SectionHeading({ id, eyebrow, title, subtitle }) {
       )}
       <h2
         id={id}
-        className="text-3xl font-bold text-institucional-azul sm:text-4xl"
+        className="text-3xl font-bold tracking-tight text-institucional-azul sm:text-4xl"
       >
         {title}
       </h2>

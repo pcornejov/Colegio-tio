@@ -1,4 +1,6 @@
 import SectionHeading from '../ui/SectionHeading'
+import SubHeading from '../ui/SubHeading'
+import Card from '../ui/Card'
 import { school } from '../../data/school'
 
 // Itihue 426, San Carlos, Ñuble (coordenadas aproximadas del centro de San
@@ -22,7 +24,7 @@ export default function Contacto() {
 
         <div className="grid gap-10 md:grid-cols-2">
           <div className="space-y-10">
-            <div className="space-y-4 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+            <Card className="space-y-4">
               <div>
                 <h3 className="text-sm font-semibold uppercase tracking-wide text-institucional-azul">
                   Dirección
@@ -76,10 +78,10 @@ export default function Contacto() {
                   </a>
                 </p>
               </div>
-            </div>
+            </Card>
 
             {school.direccionEscolar && (
-              <div className="space-y-4 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md">
+              <Card className="space-y-4">
                 <div>
                   <h3 className="text-sm font-semibold uppercase tracking-wide text-institucional-azul">
                     Dirección del establecimiento
@@ -92,7 +94,7 @@ export default function Contacto() {
                   </h3>
                   <p className="mt-1 text-gray-700">{school.direccionEscolar.horarioAtencion}</p>
                 </div>
-              </div>
+              </Card>
             )}
           </div>
 
@@ -118,9 +120,7 @@ export default function Contacto() {
 
         {school.documentos?.length > 0 && (
           <div className="mt-16">
-            <h3 className="mb-6 text-center text-2xl font-bold text-institucional-azul">
-              Documentos institucionales
-            </h3>
+            <SubHeading title="Documentos institucionales" />
             <div className="grid gap-6 sm:grid-cols-2">
               {school.documentos.map((documento) => (
                 <a
@@ -128,7 +128,7 @@ export default function Contacto() {
                   href={documento.url}
                   target="_blank"
                   rel="noreferrer"
-                  className="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md"
+                  className="flex items-start gap-3 rounded-xl border border-gray-200 bg-white p-6 shadow-sm transition-shadow hover:shadow-md focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-institucional-rojo focus-visible:ring-offset-2 focus-visible:ring-offset-white"
                 >
                   <svg
                     aria-hidden="true"

@@ -1,4 +1,5 @@
 import SectionHeading from '../ui/SectionHeading'
+import SubHeading from '../ui/SubHeading'
 import Card from '../ui/Card'
 import { school } from '../../data/school'
 
@@ -158,9 +159,7 @@ export default function VidaEscolar() {
 
         {school.vidaEscolar.programas?.length > 0 && (
           <div className="mt-16">
-            <h3 className="mb-6 text-center text-2xl font-bold text-institucional-azul">
-              Programas institucionales
-            </h3>
+            <SubHeading title="Programas institucionales" />
             <ul className="flex flex-wrap justify-center gap-2">
               {school.vidaEscolar.programas.map((programa) => (
                 <li

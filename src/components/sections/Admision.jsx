@@ -1,4 +1,5 @@
 import SectionHeading from '../ui/SectionHeading'
+import SubHeading from '../ui/SubHeading'
 import Card from '../ui/Card'
 import { school } from '../../data/school'
 
@@ -39,12 +40,7 @@ export default function Admision() {
         </div>
 
         <div className="mt-16">
-          <h3 className="mb-2 text-center text-2xl font-bold text-institucional-azul">
-            Nuestro Proyecto Educativo
-          </h3>
-          <p className="mx-auto mb-6 max-w-2xl text-center text-gray-600">
-            {school.pei.eslogan}
-          </p>
+          <SubHeading title="Nuestro Proyecto Educativo" subtitle={school.pei.eslogan} />
 
           <div className="grid gap-6 sm:grid-cols-2">
             <Card title="Misión">

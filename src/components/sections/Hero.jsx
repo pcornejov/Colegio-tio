@@ -5,9 +5,16 @@ export default function Hero() {
     <section
       id="inicio"
       aria-labelledby="inicio-titulo"
-      className="bg-gradient-to-b from-institucional-azul to-institucional-azul/90 py-20 text-institucional-crema"
+      className="relative overflow-hidden py-20 text-institucional-crema"
     >
-      <div className="mx-auto flex max-w-6xl flex-col items-center px-4 text-center">
+      <img
+        src={`${import.meta.env.BASE_URL}images/galeria/fachada.jpg`}
+        alt=""
+        aria-hidden="true"
+        className="absolute inset-0 h-full w-full object-cover object-center"
+      />
+      <div className="absolute inset-0 bg-gradient-to-b from-institucional-azul-oscuro/90 via-institucional-azul/85 to-institucional-azul/90" />
+      <div className="relative mx-auto flex max-w-6xl flex-col items-center px-4 text-center">
         <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-institucional-crema/80">
           {school.comuna}, {school.region} · Chile
         </p>
@@ -16,7 +23,7 @@ export default function Hero() {
         </span>
         <h1
           id="inicio-titulo"
-          className="max-w-3xl text-4xl font-bold leading-tight sm:text-5xl"
+          className="max-w-3xl text-5xl font-bold leading-tight tracking-tight sm:text-6xl"
         >
           {school.nombreOficial}
         </h1>
@@ -27,7 +34,7 @@ export default function Hero() {
         <div className="mt-8 flex flex-wrap justify-center gap-4">
           <a
             href="#historia"
-            className="rounded-lg bg-institucional-rojo px-6 py-3 font-semibold text-white shadow transition hover:brightness-110"
+            className="rounded-lg bg-institucional-rojo px-6 py-3 font-semibold text-white shadow transition hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-institucional-rojo focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             Conoce nuestra historia
           </a>
@@ -35,7 +42,7 @@ export default function Hero() {
             href={school.slep.sitioOficial}
             target="_blank"
             rel="noreferrer"
-            className="rounded-lg border border-institucional-crema/60 px-6 py-3 font-semibold text-institucional-crema transition hover:bg-institucional-crema/10"
+            className="rounded-lg border border-institucional-crema/60 px-6 py-3 font-semibold text-institucional-crema transition hover:bg-institucional-crema/10 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-institucional-rojo focus-visible:ring-offset-2 focus-visible:ring-offset-white"
           >
             Sitio del SLEP Punilla Cordillera
           </a>

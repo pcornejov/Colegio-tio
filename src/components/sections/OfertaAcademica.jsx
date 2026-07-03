@@ -1,4 +1,5 @@
 import SectionHeading from '../ui/SectionHeading'
+import SubHeading from '../ui/SubHeading'
 import Card from '../ui/Card'
 import { school } from '../../data/school'
 
@@ -119,14 +120,11 @@ export default function OfertaAcademica() {
 
         {school.ofertaAcademica.talleresExtraescolares?.length > 0 && (
           <div className="mt-16">
-            <h3 className="mb-2 text-center text-2xl font-bold text-institucional-azul">
-              Talleres extraescolares
-            </h3>
-            <p className="mx-auto mb-8 max-w-2xl text-center text-gray-600">
-              Además de las asignaturas regulares, los estudiantes pueden participar
-              en estos talleres y actividades extraprogramáticas, organizados por
-              ciclo.
-            </p>
+            <SubHeading
+              title="Talleres extraescolares"
+              subtitle="Además de las asignaturas regulares, los estudiantes pueden participar en estos talleres y actividades extraprogramáticas, organizados por ciclo."
+              subtitleClassName="mb-8"
+            />
 
             <div className="grid gap-6 md:grid-cols-3">
               {school.ofertaAcademica.talleresExtraescolares.map((grupo) => {
@@ -170,9 +168,7 @@ export default function OfertaAcademica() {
         )}
 
         <div className="mt-16">
-          <h3 className="mb-6 text-center text-2xl font-bold text-institucional-azul">
-            Noticias
-          </h3>
+          <SubHeading title="Noticias" />
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
             {noticias.map((noticia) => (
               <Card key={noticia.titulo} title={noticia.titulo}>
