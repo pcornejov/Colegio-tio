@@ -121,7 +121,7 @@ export default function OfertaAcademica() {
                             </span>
                           )}
                           {taller.nota && (
-                            <span className="mt-0.5 block text-xs font-normal opacity-80">
+                            <span className="mt-0.5 block text-xs font-normal">
                               {taller.nota}
                             </span>
                           )}
