@@ -1,5 +1,8 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64" role="img" aria-label="Escudo Escuela José Miguel Carrera Verdugo (interpretación propia)">
-  <!-- Versión simplificada, para tamaño pequeño, del escudo propio en public/images/escudo-placeholder.svg -->
+  <!-- Versión simplificada, para tamaño pequeño, inspirada en los colores y
+       formas del escudo oficial (public/images/escudo-oficial.png). Se
+       mantiene como vector simplificado porque el escudo oficial no es
+       legible a tamaño de favicon (16-32px). -->
   <path d="M32 3 L59 13 V34 C59 50 47 60 32 61 C17 60 5 50 5 34 V13 Z" fill="#FFFFFF" stroke="#0A0A8F" stroke-width="3"/>
   <rect x="27" y="34" width="10" height="16" rx="2" fill="#e8d018"/>
   <path d="M32 16 C39 24 41 31 36 37 C33 41 31 41 28 37 C23 31 25 24 32 16 Z" fill="#B91C1C"/>

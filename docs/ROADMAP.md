@@ -373,10 +373,12 @@ personalmente antes de incorporarse.
       nombre completo confirmado por la API oficial de Mineduc en la
       Iteración 11): el nombre en sí ya está confirmado, pero el cargo
       puede cambiar: confirmar vigencia.
-- [ ] **Escudo**: decidir si reemplazar el SVG propio (interpretación no
-      oficial, Iteración 5) por el archivo oficial `logo.png` del sitio
-      `escuelajosemcarrera.cl`, respetando los derechos de uso de ese
-      asset (confirmar con el colegio/SLEP si se puede usar directamente).
+- [x] **Escudo (resuelto)**: reemplazado el SVG propio (interpretación no
+      oficial, Iteración 5) por el escudo oficial real (`public/images/escudo-oficial.png`,
+      descargado de `escuelajosemcarrera.cl`), usado en `Historia.jsx` con
+      autorización explícita del dueño del proyecto (confirmó representar
+      al colegio/SLEP). El favicon se mantiene como vector simplificado
+      propio, ya que el escudo oficial no es legible a tamaño de ícono.
 - [ ] **Fechas exactas del proceso de Admisión Escolar (SAE)** del año en
       curso (se publican anualmente en sae.mineduc.cl).
 - [ ] **Confirmar detalles del Programa de Integración Escolar (PIE)**:
